@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "Figtree";
+  src: url("assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("assets/fonts/Figtree-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-style: italic;
+}
+
+:root {
+  --main-bg-clr: hsl(47, 88%, 63%);
+  --accent-bg-clr: hsl(0, 0%, 100%);
+
+  --main-clr: hsl(0, 0%, 7%);
+  --accent-clr: hsl(0, 0%, 50%);
+  --active-link-clr: hsl(47, 88%, 63%);
+
+  --main-ff: "Figtree", sans-serif;
+
+  --main-fs: 1rem;
+
+  --main-fw: 500;
+  --accent-fw: 800;
+
+  --main-lh: 150%;
+
+  /* From figma design files */
+  --accent-fs: 1.5rem;
+  --small-fs: 0.875rem;
+
+  --card-max-width: 24rem;
+  --card-margin: 1.5rem;
+  --card-padding: 1.5rem;
+  --card-border-radius: 1.25rem;
+  --card-section-gap: 1.5rem;
+  --card-drop-shadow-offset: 8px 8px;
+  --card-active-drop-shadow-offset: 16px 16px;
+
+  --illustration-border-radius: 0.625rem;
+
+  --description-item-gap: 0.75rem;
+
+  --tag-padding: 0.25rem 0.75rem;
+  --tag-border-radius: 0.25rem;
+
+  --author-item-gap: 0.75rem;
+  --author-headshot-max-size: 2rem;
+}
+
+/* Relevant CSS reset */
+* {
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+img {
+  /* Prevents imgs from overflowing their parents */
+  max-width: 100%;
+}
+
+body {
+  /* Makes the body take up the whole viewport height */
+  height: 100vh;
+
+  /* Used to center the blog card vertically */
+  display: flex;
+  align-items: center;
+
+  color: var(--main-clr);
+  background-color: var(--main-bg-clr);
+
+  font-family: var(--main-ff);
+  font-size: var(--main-fs);
+  font-weight: var(--main-fw);
+  line-height: var(--main-lh);
+}
+
+a {
+  color: var(--main-clr);
+
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--active-link-clr);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.small-text {
+  font-size: var(--small-fs);
+}
+
+.large-text {
+  font-size: var(--accent-fs);
+}
+
+.bold {
+  font-weight: var(--accent-fw);
+}
+
+.container {
+  /* Used to center the blog card horizontally */
+  margin: 0 auto;
+}
+
+.blog-card {
+  display: grid;
+  gap: var(--card-section-gap);
+
+  background-color: var(--accent-bg-clr);
+
+  max-width: var(--card-max-width);
+
+  margin: var(--card-margin);
+  padding: var(--card-padding);
+
+  border: 1px solid black;
+  border-radius: var(--card-border-radius);
+
+  filter: drop-shadow(var(--card-drop-shadow-offset));
+  transition: filter 0.5s;
+}
+
+.blog-card:hover,
+.blog-card:focus-within {
+  filter: drop-shadow(var(--card-active-drop-shadow-offset));
+}
+
+.blog-illustration {
+  border-radius: var(--illustration-border-radius);
+}
+
+.blog-description-section {
+  display: grid;
+  gap: var(--description-item-gap);
+}
+
+.blog-tag {
+  background-color: var(--main-bg-clr);
+
+  width: fit-content;
+
+  padding: var(--tag-padding);
+
+  border-radius: var(--tag-border-radius);
+}
+
+.blog-description {
+  color: var(--accent-clr);
+}
+
+.blog-author-section {
+  display: flex;
+  align-items: center;
+
+  gap: var(--author-item-gap);
+}
+
+.blog-author-headshot {
+  max-width: var(--author-headshot-max-size);
+}
+
+/* From the original html file */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: underline;
+}
+
+.attribution a:hover {
+  color: black;
+}
